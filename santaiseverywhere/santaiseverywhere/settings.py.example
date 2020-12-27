@@ -88,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'room',
-        'USER': 'prasanna',
-        'PASSWORD': 'shaokhan33'
+        'USER': 'username',
+        'PASSWORD': 'password'
     }
 }
 
@@ -145,16 +145,11 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'guessthegift.secret.santa@gmail.com'
-EMAIL_HOST_PASSWORD = 'SecretSanta1@'
+EMAIL_HOST_PASSWORD = 'enter your password here'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True 
 SERVER_EMAIL = 'django@my-domain.com'
 
-'''
-DB Creation cmds;
-CREATE USER prasanna WITH PASSWORD 'shaokhan33';
-CREATE DATABASE room WITH OWNER prasanna;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO prasanna;
-'''
 
-django_heroku.settings(locals())
+
+# django_heroku.settings(locals())
