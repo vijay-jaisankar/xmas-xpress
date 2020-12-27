@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous">
+    </script>
+    <style>
+      
+
+        #anime-demo {
+          position: relative;
+        }
+        
+        button {
+          background: orange;
+          color: white;
+          margin: 5px;
+          padding: 10px;
+          border-radius: 4px;
+          font-family: 'Lato';
+          cursor: pointer;
+          border: none;
+          outline: none;
+        }
+        
+        button:hover {
+          background: blue;
+        }
+        
+        .box, .square {
+          pointer-events: none;
+          background-color: black;
+          margin: 4px;
+          display: inline-block;
+          top: -10px;
+          left: -10px;
+          opacity: 0.6;
+          border-radius: 5px;
+          width: 10px;
+          height: 10px;
+        }
+        
+        .color-codes {
+          position: absolute;
+          top: 0;
+        }
+        
+        .box {
+          position: relative;
+          top: 8px;
+        }
+        
+        .square {
+          position: absolute;
+        }
+        
+        .square.blue, .box.blue {
+          background: blue;
+        }
+        
+        .square.red, .box.red {
+          background: red;
+        }
+        
+        .square.orange, .box.orange {
+          background: orange;
+        }
+        
+        .square.green, .box.green {
+          background: green;
+        }
+        
+        .controls {
+          margin-top: 20px;
+          text-align: center;
+        }
+        
+            </style>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Login to Xmas Xpress</h1>
+        <br>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <br><br>
+                    <input type="submit" value="Log In" class="btn btn-primary">
+                </form>  
+            </div>
+            <div class="col-xs-1-12 col-md-4"></div>
+            <div class="col-xs-1-12 col-md-4">
+               
+                <div id="anime-demo">
+                    <svg width="208" height="179" viewBox="0 0 208 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M104 5.91105L126.59 68.7385L127.066 70.0618H128.472H200.975L142.499 108.454L141.181 109.32L141.715 110.803L164.16 173.23L105.098 134.452L104 133.731L102.902 134.452L43.8396 173.23L66.2855 110.803L66.8188 109.32L65.5011 108.454L7.02513 70.0618H79.528H80.9342L81.41 68.7385L104 5.91105Z" stroke="#FFC000" stroke-width="4"/>
+                        </svg>
+                        
+                      <div class="square blue"></div>
+                      
+                    </div>
+                
+                <script>
+                    var path = anime.path('path');
+            
+            var easings = ['linear'];
+            
+            var motionPath = anime({
+              targets: '.square',
+              translateX: path('x'),
+              translateY: path('y'),
+              rotate: path('angle'),
+              easing: function (el, i) {
+                return easings[i];
+              },
+              duration: 10000,
+              loop: true
+            });
+                </script>
+                
+            </div>
+        </div>
+        </div>
+       
+{% endblock content %}

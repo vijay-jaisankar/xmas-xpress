@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Room - {{ room.name }}
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Room "{{ room.name }}" Contents</h1>
+        <p>{{ room.description }}</p>
+        <a href="{% url 'room_delete' room.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'auth_secret_santa' room.id %}" class="btn btn-warning">Authenticate Secret Santa</a>
+        <a href="{% url 'email_invites' room.id %}" class="btn btn-success">Send Invites</a>
+        <p><b>Current users in the group</b></p>
+        <ul>
+            {% for user in room.users.all %}
+                <li>{{ user.username }}</li>
+            {% endfor %}
+        </ul>
+        <p><b>Recommended gifts</b></p>
+        <!-- <ul>
+            {% for gift in giftlist %}
+                <p><a href="https://www.amazon.in/{{ gift }}">Gift link - {{ forloop.counter }}</a></p>
+            {% endfor %}
+        </ul> -->
+        
+        <div class="row">
+        {% for key,value in gifts.items %}
+            <div class="col-xs-1-12 col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="{{ value }}" alt="gift recommendation" width="200" height="200">
+                    <div class="card-body">
+                        <h4 class="card-title">Recommended Gift - {{ forloop.counter }}</h4>
+                        <p class="card-text"><a href="https://www.amazon.in/{{ key}}">Gift link - {{ forloop.counter }}</a></p>
+                    </div>
+                </div>
+                <br>    
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

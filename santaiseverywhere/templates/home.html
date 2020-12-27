@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <title>Home</title>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container">
+        {% if request.user.is_authenticated %}
+            <p>Hi {{ user.username }}</p>
+            <p><a href="{% url 'logout' %}">Log out</a></p>
+        {% else %}
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">Log in</a>
+        {% endif %}
+        <h1>Welcome to Santa Is Everywhere.</h1>
+        <p>A place for virtual secret santa.</p>
+    </div>
+{% endblock content %}

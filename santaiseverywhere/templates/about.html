@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>XmasXpress-About</title>
+{% endblock head %}
+
+{% block content %}
+    <div class="container">
+        <h1>About Us</h1>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ prasanna.picture }}" alt="Developer Picture" width="50" height="300">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ prasanna.name }}</h4>
+                        <p class="card-text">{{ prasanna.position }}</p>
+                        <p><a href="{{ prasanna.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1-12 col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ vijay.picture }}" alt="Developer Picture" width="50" height="300">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ vijay.name }}</h4>
+                        <p class="card-text">{{ vijay.position }}</p>
+                        <p><a href="{{ vijay.gitlink }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

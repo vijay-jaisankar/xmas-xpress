@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block head %}
+    <title>Send Invitation</title>
+{% endblock head %}
+
+
+{% block content %} 
+    <div class="container">
+        <h1>Send Invitations</h1>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <br><br>
+                    <input type="submit" value="send invites" class="btn btn-info">
+                </form>  
+            </div>
+        </div>
+    </div>
+{% endblock content %}

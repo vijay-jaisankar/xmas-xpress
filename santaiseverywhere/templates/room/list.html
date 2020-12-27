@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Room List</title>
+{% endblock title %}
+
+{% block head %}
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Hi+Melody&display=swap" rel="stylesheet">
+
+<style>
+    
+    
+        #items{
+        background-color: #5F3A4B;
+        color: white;
+        padding: 0.5em 1.0em;
+        text-decoration: none;
+        text-transform: uppercase;
+        }
+
+        #items:hover{
+        background-color: #088FAF;
+        }
+
+        #items:active {
+        background-color: F96864;
+        }
+
+        #items:visited {
+        background-color: #9DBE55;
+        }
+
+        h1{
+            font-family: 'Amatic SC', cursive;
+            font-size: 100px;
+        }
+
+        .invite{
+            font-family: 'Hi Melody', cursive;
+            font-size: 70px;
+            color:red;
+        }
+   
+    
+</style>
+
+{% endblock head %}
+
+{% block content %}
+    <div class="container">
+        <h1>Available Secret Santa Rooms</h1>
+        <p class="invite">Please Enter one of these rooms</p>
+        {% for room in rooms %}
+            <div class="row">
+                <div class="col-xs-1-12 col-md-4">
+                    <div class="card">
+                        <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{% url 'room_password' room.id %}" id="items">{{ room.name }}</a></h4>
+                            <p class="card-text">{{ room.description|truncatewords:20|linebreaks }}</p>
+                        </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock content %}
+
+<!-- {% url 'room_detail' room.id %}" -->

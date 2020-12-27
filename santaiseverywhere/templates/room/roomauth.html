@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+    <title>Room Authentication</title>
+{% endblock title %}
+
+
+
+{% block content %}
+    <div class="container">
+        <h1>Room Authentication</h1>
+        <p>Enter password to enter Room "{{ room.name }}"</p>
+
+        <span style="display: block;height: 30px;"></span>
+
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <br>
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </form>  
+            </div>
+        </div>
+    </div>
+{% endblock content %}

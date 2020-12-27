@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Create New Room</title>
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>Create a new Room</h1>
+        <div class="row">
+            <div class="col-xs-1-12 col-md-4">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ roomForm|crispy }}
+                    <br>
+                    <input type="submit" value="Create New Room" class="btn btn-primary">
+                </form>  
+            </div>
+        </div>
+    </div>
+{% endblock content %}
