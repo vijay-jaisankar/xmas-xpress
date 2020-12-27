@@ -27,7 +27,7 @@ SECRET_KEY = 'fs3&z@6nlhq-&nyjrjhlh=hg-a116gqk*ot83u#-&1g-7_#uzm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
