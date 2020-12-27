@@ -234,7 +234,7 @@ def makeAuthSecretSanta(request,pk):
                 sendrec = secretSantaDict(room)
                 for user in room.users.all():
                     subject = "secret santa - gift sending"
-                    message = "You are the secret santa for {}.\n Surprise them with a cool gift. Also make sure your gift price is under the budget.".format(sendrec[user])
+                    message = "You are the secret santa for {}.\nSurprise them with a cool gift. Also make sure your gift price is under the budget.\nJump on the Xmas Xpress and make them happy today.".format(sendrec[user])
                     send_mail(subject,message,'guessthegift.secret.santa@gmail.com',[user.email])
             else:
                 print("Master Password false")
@@ -285,7 +285,7 @@ def sendEmailInvites(request,pk):
                 pprint("master password accepted")
                 post_url = room.get_absolute_url()
                 subject = "secret santa invitation"
-                message = "{} is inviting you for secret santa at {}. The password for entry is {}".format(request.user.username,post_url,room.password)
+                message = "{} is inviting you for secret santa at https://xmasxpress2.herokuapp.com{}. The password for entry is {}".format(request.user.username,post_url,room.password)
                 send_mail(subject,message,'guessthegift.secret.santa@gmail.com',cd['to'])
                 sent = True 
                 # return redirect('home')
