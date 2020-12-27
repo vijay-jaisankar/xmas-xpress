@@ -22,6 +22,6 @@ Documentation: https://docs.google.com/document/d/1Gb3Y3QmWOQEaHs6bgkqjW83wq8ClZ
 
 ### Remaining Tasks - Hackathon
 - [x] Register + Fill forms
-- [ ] Devpost
-- [ ] Video
+- [x] Devpost
+- [x] Video
 - [ ] Slides
