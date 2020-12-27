@@ -1,1 +1,1 @@
-web: gunicorn santaiseverywhere.wsgi
+web: gunicorn santaiseverywhere/santaiseverywhere.wsgi:app
