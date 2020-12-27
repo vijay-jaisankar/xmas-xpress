@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from os.path import join 
 from pathlib import Path
+import django_heroku 
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -154,3 +156,5 @@ CREATE USER prasanna WITH PASSWORD 'shaokhan33';
 CREATE DATABASE room WITH OWNER prasanna;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO prasanna;
 '''
+
+django_heroku.settings(locals())

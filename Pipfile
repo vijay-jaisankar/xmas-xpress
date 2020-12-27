@@ -15,6 +15,7 @@ requests = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.9"
