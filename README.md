@@ -1,4 +1,7 @@
 # Xmas Xpress
+Website Link: xmasxpress2.herokuapp.com
+Custom Domain(not deployed): xmasxpress.us
+Video Link: https://www.youtube.com/watch?v=G5zqPTBA2BQ&feature=emb_logo
 
 ## Inspiration
 * We were inspired by the holiday themed hackathon to make a secret santa but a virtual one with tons of security and more features.
