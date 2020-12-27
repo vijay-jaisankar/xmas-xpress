@@ -1,1 +1,0 @@
-web: gunicorn santaiseverywhere\santaiseverywhere.wsgi --log-file -
